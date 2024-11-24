@@ -1,0 +1,11 @@
+.bg-contendor{
+    -fx-background-color: #FEF2E4;
+    -fx-background-radius:  20;
+    -fx-border-color:  #000000;
+    -fx-border-radius: 17;
+    -fx-border-style: solid;
+    -fx-border-width: 4;
+}
+.bg-principal-gradient{
+    -fx-background-color: linear-gradient(to bottom,#FAA42F,#FA5F2F);
+}

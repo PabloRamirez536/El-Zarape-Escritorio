@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1900.0" style="-fx-background-color: #FD974F;" stylesheets="@style/styleInicio.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utleon.elzarape.InicioController">
+   <children>
+      <Pane layoutX="249.0" layoutY="162.0" prefHeight="300.0" prefWidth="300.0" styleClass="bg-contendor">
+         <children>
+            <VBox fx:id="sucursalItemBar" alignment="TOP_CENTER" layoutX="5.0" layoutY="5.0" prefHeight="290.0" prefWidth="290.0">
+               <children>
+                  <ImageView fitHeight="207.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/sucursales.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Sucursales">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Label alignment="CENTER" layoutX="768.0" layoutY="51.0" text="Bienvenido" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="Arial Bold" size="64.0" />
+         </font>
+      </Label>
+      <Pane layoutX="670.0" layoutY="162.0" prefHeight="300.0" prefWidth="300.0" styleClass="bg-contendor">
+         <children>
+            <VBox fx:id="clienteItemBar" alignment="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="290.0" prefWidth="290.0">
+               <children>
+                  <ImageView fitHeight="207.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/cliente.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Clientes">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane layoutX="1079.0" layoutY="162.0" prefHeight="300.0" prefWidth="300.0" styleClass="bg-contendor">
+         <children>
+            <VBox fx:id="empleadoItemBar" alignment="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="290.0" prefWidth="290.0">
+               <children>
+                  <ImageView fitHeight="207.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/empleado.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Empleados">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+         </children></Pane>
+      <Pane layoutX="1457.0" layoutY="158.0" prefHeight="300.0" prefWidth="300.0" styleClass="bg-contendor">
+         <children>
+            <VBox fx:id="categoriaItemBar" alignment="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="290.0" prefWidth="290.0">
+               <children>
+                  <ImageView fitHeight="207.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/categorias.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Categorias">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+         </children></Pane>
+      <Pane layoutX="249.0" layoutY="519.0" prefHeight="300.0" prefWidth="300.0" styleClass="bg-contendor">
+         <children>
+            <VBox fx:id="alimentoItemBar" alignment="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="290.0" prefWidth="290.0">
+               <children>
+                  <ImageView fitHeight="207.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/alimentos.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Alimentos">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+         </children></Pane>
+      <Pane layoutX="670.0" layoutY="519.0" prefHeight="300.0" prefWidth="300.0" styleClass="bg-contendor">
+         <children>
+            <VBox fx:id="bebidaItemBar" alignment="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="290.0" prefWidth="290.0">
+               <children>
+                  <ImageView fitHeight="207.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/bebidas.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Bebidas">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+         </children></Pane>
+      <Pane layoutX="1079.0" layoutY="519.0" prefHeight="300.0" prefWidth="300.0" styleClass="bg-contendor">
+         <children>
+            <VBox fx:id="comboItemBar" alignment="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="290.0" prefWidth="290.0">
+               <children>
+                  <ImageView fitHeight="207.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/conbos.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Combos">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+         </children></Pane>
+      <Pane layoutX="1457.0" layoutY="519.0" prefHeight="300.0" prefWidth="300.0" styleClass="bg-contendor">
+         <children>
+            <VBox fx:id="salirItemBar" alignment="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="290.0" prefWidth="290.0">
+               <children>
+                  <ImageView fitHeight="207.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/salir.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label text="Salir">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+         </children></Pane>
+   </children>
+</AnchorPane>

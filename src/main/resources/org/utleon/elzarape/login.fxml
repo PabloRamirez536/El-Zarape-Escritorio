@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" styleClass="bg-principal-gradient" stylesheets="@style/styleInicio.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utleon.elzarape.LoginController">
+   <children>
+      <ImageView fitHeight="248.0" fitWidth="255.0" layoutX="176.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="176.0" AnchorPane.topAnchor="14.0">
+         <image>
+            <Image url="@img/logoSinFondo.png" />
+         </image></ImageView>
+      <Label alignment="CENTER" layoutY="258.0" text="Bienvenido - Sistema de Gestión" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font name="Arial Bold" size="36.0" />
+         </font></Label>
+      <VBox layoutX="101.0" layoutY="315.0" prefHeight="150.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+         <children>
+            <Label text="Usuario:">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></Label>
+            <TextField fx:id="txtUsuario">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font></TextField>
+            <Label text="Constraseña:">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font></Label>
+            <PasswordField fx:id="txtContrsenia">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font></PasswordField>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="btnLogin" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@img/icons8-login-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="btnSalir" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-close-50.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </children>
+</AnchorPane>
