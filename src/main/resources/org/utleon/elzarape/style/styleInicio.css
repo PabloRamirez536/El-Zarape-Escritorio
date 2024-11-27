@@ -9,3 +9,15 @@
 .bg-principal-gradient{
     -fx-background-color: linear-gradient(to bottom,#FAA42F,#FA5F2F);
 }
+
+.bg-titulo{
+    -fx-background-color: #C60000;
+}
+
+.bg-fondo-modulo{
+    -fx-background-color: #FEF2E4;
+}
+
+.bg-columnas-modulo{
+    -fx-background-color: #FD974F;
+}
