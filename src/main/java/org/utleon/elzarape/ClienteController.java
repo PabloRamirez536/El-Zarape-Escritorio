@@ -329,7 +329,7 @@ public class ClienteController {
             HttpResponse<String> response = Unirest.post(globals.BASE_URL + "cliente/insertarCliente")
                     .header("Content-Type", "application/x-www-form-urlencoded")
                     .field("cliente", clienteJson) // Enviar el JSON por el body de la petición
-                    .asString();
+                    .asString();//
 
 
             // Validar la respuesta
