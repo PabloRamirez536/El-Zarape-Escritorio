@@ -38,6 +38,8 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
@@ -58,7 +60,7 @@
                   <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="41.0" prefWidth="456.0" text="Nombre:">
+                  <Label alignment="CENTER" prefHeight="41.0" prefWidth="456.0" text="Nombre:" GridPane.rowIndex="2">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -66,7 +68,7 @@
                         <Insets bottom="10.0" top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="txtNombre" alignment="CENTER" promptText="Ingresa el nombre..." GridPane.rowIndex="1">
+                  <TextField fx:id="txtNombre" alignment="CENTER" promptText="Ingresa el nombre..." GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -74,7 +76,7 @@
                         <Insets />
                      </GridPane.margin>
                   </TextField>
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Apellidos:" GridPane.rowIndex="2">
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Apellidos:" GridPane.rowIndex="4">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -85,7 +87,7 @@
                         <Insets bottom="10.0" top="10.0" />
                      </padding>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Teléfono:" GridPane.rowIndex="4">
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Teléfono:" GridPane.rowIndex="6">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -93,7 +95,7 @@
                         <Insets top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Usuario:" GridPane.rowIndex="6">
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Usuario:" GridPane.rowIndex="8">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -101,7 +103,7 @@
                         <Insets top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Contraseña:" GridPane.rowIndex="8">
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Contraseña:" GridPane.rowIndex="10">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -109,7 +111,7 @@
                         <Insets top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Estado:" GridPane.rowIndex="10">
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Estado:" GridPane.rowIndex="12">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -117,7 +119,7 @@
                         <Insets top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Ciudad:" GridPane.rowIndex="12">
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Ciudad:" GridPane.rowIndex="14">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -125,7 +127,7 @@
                         <Insets top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Estatus" GridPane.rowIndex="14">
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Estatus" GridPane.rowIndex="16">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -133,7 +135,7 @@
                         <Insets top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Acción" GridPane.rowIndex="16">
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Acción" GridPane.rowIndex="18">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>
@@ -141,7 +143,7 @@
                         <Insets bottom="10.0" top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="txtApellidos" alignment="CENTER" promptText="Ingresa los Apellidos..." GridPane.rowIndex="3">
+                  <TextField fx:id="txtApellidos" alignment="CENTER" promptText="Ingresa los Apellidos..." GridPane.rowIndex="5">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -149,7 +151,7 @@
                         <Insets />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="txtTelefono" alignment="CENTER" promptText="Ingresa el Teléfono..." GridPane.rowIndex="5">
+                  <TextField fx:id="txtTelefono" alignment="CENTER" promptText="Ingresa el Teléfono..." GridPane.rowIndex="7">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -157,7 +159,7 @@
                         <Insets />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="txtUsuario" alignment="CENTER" promptText="Ingresa el Usuario..." GridPane.rowIndex="7">
+                  <TextField fx:id="txtUsuario" alignment="CENTER" promptText="Ingresa el Usuario..." GridPane.rowIndex="9">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -165,7 +167,7 @@
                         <Insets />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="txtContrasenia" alignment="CENTER" promptText="Ingresa la Contraseña..." GridPane.rowIndex="9">
+                  <TextField fx:id="txtContrasenia" alignment="CENTER" promptText="Ingresa la Contraseña..." GridPane.rowIndex="11">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -173,28 +175,28 @@
                         <Insets />
                      </GridPane.margin>
                   </TextField>
-                  <ComboBox fx:id="txtEstado" prefHeight="25.0" prefWidth="534.0" GridPane.rowIndex="11">
+                  <ComboBox fx:id="txtEstado" prefHeight="25.0" prefWidth="534.0" GridPane.rowIndex="13">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ComboBox>
-                  <ComboBox fx:id="txtCiudad" prefHeight="25.0" prefWidth="534.0" GridPane.rowIndex="13">
+                  <ComboBox fx:id="txtCiudad" prefHeight="25.0" prefWidth="534.0" GridPane.rowIndex="15">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </ComboBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="15">
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="17">
                      <children>
-                        <CheckBox fx:id="txtEstatus" mnemonicParsing="false">
+                        <CheckBox fx:id="txtEstatus" alignment="CENTER" mnemonicParsing="false">
                            <font>
-                              <Font name="Arial" size="18.0" />
+                              <Font size="18.0" />
                            </font>
                         </CheckBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="461.0" GridPane.rowIndex="17">
+                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="461.0" GridPane.rowIndex="19">
                      <children>
-                        <Button fx:id="btnGuardar" mnemonicParsing="false" text="Guardar">
+                        <Button fx:id="btnGuardar" mnemonicParsing="false" styleClass="btn-funciones" text="Guardar">
                            <HBox.margin>
                               <Insets right="15.0" />
                            </HBox.margin>
@@ -202,7 +204,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnLimpiar" mnemonicParsing="false" text="Limpiar">
+                        <Button fx:id="btnLimpiar" mnemonicParsing="false" styleClass="btn-funciones" text="Limpiar">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -215,6 +217,16 @@
                         </Button>
                      </children>
                   </HBox>
+                  <Label alignment="CENTER" prefHeight="41.0" prefWidth="456.0" text="ID Cliente:">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtIdCliente" alignment="CENTER" promptText="ID Cliente" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </TextField>
                </children>
                <opaqueInsets>
                   <Insets />
@@ -225,15 +237,15 @@
          <children>
             <TableView fx:id="tblClientes" layoutX="22.0" layoutY="159.0" prefHeight="751.0" prefWidth="1265.0">
               <columns>
-                <TableColumn fx:id="colId" prefWidth="66.0" styleClass="bg-columnas-modulo" text="ID Cliente" />
-                <TableColumn fx:id="colNombre" prefWidth="111.0" styleClass="bg-columnas-modulo" text="Nombre" />
-                  <TableColumn fx:id="colApellidos" prefWidth="121.0" styleClass="bg-columnas-modulo" text="Apellidos" />
-                  <TableColumn fx:id="colTelefono" prefWidth="137.0" styleClass="bg-columnas-modulo" text="Teléfono" />
-                  <TableColumn fx:id="colUsuario" prefWidth="122.0" styleClass="bg-columnas-modulo" text="Usuario" />
-                  <TableColumn fx:id="colContrasenia" prefWidth="145.0" styleClass="bg-columnas-modulo" text="Contraseña" />
-                  <TableColumn fx:id="colEstado" prefWidth="198.0" styleClass="bg-columnas-modulo" text="Estado" />
-                  <TableColumn fx:id="colCiudad" prefWidth="210.0" styleClass="bg-columnas-modulo" text="Ciudad" />
-                  <TableColumn fx:id="colEstatus" prefWidth="154.0" styleClass="bg-columnas-modulo" text="Estatus" />
+                <TableColumn fx:id="colId" prefWidth="66.0" text="ID Cliente" />
+                <TableColumn fx:id="colNombre" prefWidth="111.0" text="Nombre" />
+                  <TableColumn fx:id="colApellidos" prefWidth="121.0" text="Apellidos" />
+                  <TableColumn fx:id="colTelefono" prefWidth="137.0" text="Teléfono" />
+                  <TableColumn fx:id="colUsuario" prefWidth="122.0" text="Usuario" />
+                  <TableColumn fx:id="colContrasenia" prefWidth="145.0" text="Contraseña" />
+                  <TableColumn fx:id="colEstado" prefWidth="198.0" text="Estado" />
+                  <TableColumn fx:id="colCiudad" prefWidth="210.0" text="Ciudad" />
+                  <TableColumn fx:id="colEstatus" prefWidth="154.0" text="Estatus" />
               </columns>
             </TableView>
             <Label alignment="CENTER" layoutX="-2.0" layoutY="40.0" prefHeight="52.0" prefWidth="1300.0" text="Tabla Clientes">
