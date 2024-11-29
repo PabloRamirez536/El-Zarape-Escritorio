@@ -94,7 +94,7 @@ public class LoginController {
     private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titulo);
-        alert.setContentText(mensaje);//
+        alert.setContentText(mensaje);//Mensaje del error
         alert.showAndWait();
     }
 
