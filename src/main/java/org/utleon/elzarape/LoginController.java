@@ -1,5 +1,6 @@
 package org.utleon.elzarape;
 
+import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +10,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
+import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
@@ -26,37 +32,52 @@ public class LoginController {
     @FXML
     private TextField txtUsuario;
 
-    public void initialize(){
-        btnLogin.setOnMouseClicked(event ->{
-            try {
-                validarLogin();
-            }catch (IOException e){
-                throw new RuntimeException(e);
-            }
+    Globals globals = new Globals();
+
+    public void initialize() {
+        btnLogin.setOnMouseClicked(event -> {
+            validarLogin();
         });
-        btnSalir.setOnMouseClicked(event ->{
-            System.exit(0);
-        });
+        btnSalir.setOnMouseClicked(event -> System.exit(0));
     }
 
-    public void validarLogin() throws IOException {
+    public void validarLogin() {
         String usuario = txtUsuario.getText();
         String contrasenia = txtContrsenia.getText();
-        Alert alert = null;
-        if(usuario.isEmpty() || contrasenia.isEmpty()){
-            alert = new Alert(Alert.AlertType.ERROR, "Debes colocar tus credenciales.");
-            alert.showAndWait();
-        } else if (usuario.equals("admin") && contrasenia.equals("1234")) {
-            /*alert = new Alert(Alert.AlertType.CONFIRMATION, "Datos correctos.");
-            alert.showAndWait();*/
-            cargarModuloPrincipal();
-        }else {
-            alert = new Alert(Alert.AlertType.ERROR, "Datos incorrectos.");
-            alert.showAndWait();
+
+        if (usuario.isEmpty() || contrasenia.isEmpty()) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Credenciales vacías", "Debes colocar tus credenciales.");
+            return;
         }
+
+        try {
+            // Envía los datos como x-www-form-urlencoded
+            HttpResponse<String> response = Unirest.post(globals.BASE_URL + "usuario/loginEmpelado")
+                    .header("Content-Type", "application/x-www-form-urlencoded")
+                    .field("nombre", usuario)  // Campo para el nombre de usuario
+                    .field("contrasenia", contrasenia)  // Campo para la contraseña
+                    .asString();
+
+            // Maneja la respuesta del servidor
+            if (response.getStatus() == 200 || response.getStatus() == 201) {
+                JsonObject responseBody = new Gson().fromJson(response.getBody(), JsonObject.class);
+                if ("success".equals(responseBody.get("status").getAsString())) {
+                    cargarModuloPrincipal();
+                } else {
+                    mostrarAlerta(Alert.AlertType.ERROR, "Error de Inicio de Sesión", responseBody.get("message").getAsString());
+                }
+            } else {
+                mostrarAlerta(Alert.AlertType.ERROR, "Error en el Servidor", "Código: " + response.getStatus());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            mostrarAlerta(Alert.AlertType.ERROR, "Excepción", "Ocurrió un error al procesar la solicitud.");
+        }
+
     }
 
-    public void cargarModuloPrincipal() throws IOException{
+
+    public void cargarModuloPrincipal() throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(LoginController.class.getResource("inicio.fxml"));
         Scene scene = new Scene(root);
@@ -64,8 +85,17 @@ public class LoginController {
         stage.setTitle("El Zarape - Sistema de Gestión");
         stage.setMaximized(true);
         stage.show();
-        stage = (Stage) btnLogin.getScene().getWindow();
-        stage.close();
+
+        // Cierra la ventana de login
+        Stage loginStage = (Stage) btnLogin.getScene().getWindow();
+        loginStage.close();
+    }
+
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 
 }

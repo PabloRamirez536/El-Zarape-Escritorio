@@ -139,29 +139,86 @@ public class ClienteController {
             showClienteSelected();
         });
         btnGuardar.setOnAction(event -> {
-            Cliente c = new Cliente();
-            c.setActivo(txtEstatus.isSelected());
-            Persona p = new Persona();
-            p.setNombre(txtNombre.getText());
-            p.setApellidos(txtApellidos.getText());
-            p.setTelefono(txtTelefono.getText());
-            Usuario u = new Usuario();
-            u.setNombre(txtUsuario.getText());
-            u.setContrasenia(txtContrasenia.getText());
-            Ciudad ci = new Ciudad();
-            ci.setIdCiudad(txtCiudad.getSelectionModel().getSelectedItem().getIdCiudad());
-            Estado es = new Estado();
-            es.setIdEstado(txtEstado.getSelectionModel().getSelectedItem().getIdEstado());
+            boolean isModifying = btnGuardar.getText().equals("Modificar");
 
-            c.setPersona(p);
-            c.setUsuario(u);
-            c.setCiudad(ci);
-            c.setEstado(es);
-            System.out.println("Salida de cliente"+c);
-            enviarCliente(c);
-            //System.out.println("Salida de cliente que se envia a enviarCliente"+salida);
-            loadClientes();
+            if (isModifying && clienteSelected == null) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Advertencia");
+                alert.setHeaderText("No hay cliente seleccionado");
+                alert.setContentText("Por favor, selecciona un cliente para modificar.");
+                alert.showAndWait();
+                return;
+            }
+
+            try {
+                if (txtNombre.getText().isEmpty() || txtApellidos.getText().isEmpty() ||
+                        txtTelefono.getText().isEmpty() || txtUsuario.getText().isEmpty() ||
+                        txtContrasenia.getText().isEmpty() || txtCiudad.getSelectionModel().isEmpty() ||
+                        txtEstado.getSelectionModel().isEmpty()) {
+
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error de Validación");
+                    alert.setHeaderText("Campos vacíos");
+                    alert.setContentText("Por favor, completa todos los campos antes de continuar.");
+                    alert.showAndWait();
+                    return;
+                }
+
+                // Crear las instancias para el cliente
+                Cliente cliente = new Cliente();
+                if (isModifying) {
+                    cliente.setIdCliente(clienteSelected.getIdCliente()); // Aseguramos que se incluye el ID
+                }
+                cliente.setActivo(txtEstatus.isSelected());
+
+                Persona persona = new Persona();
+                persona.setNombre(txtNombre.getText());
+                persona.setApellidos(txtApellidos.getText());
+                persona.setTelefono(txtTelefono.getText());
+                cliente.setPersona(persona);
+
+                Usuario usuario = new Usuario();
+                usuario.setNombre(txtUsuario.getText());
+                usuario.setContrasenia(txtContrasenia.getText());
+                cliente.setUsuario(usuario);
+
+                Ciudad ciudad = txtCiudad.getSelectionModel().getSelectedItem();
+                cliente.setCiudad(ciudad);
+
+                Estado estado = txtEstado.getSelectionModel().getSelectedItem();
+                cliente.setEstado(estado);
+
+                String resultado;
+                if (isModifying) {
+                    resultado = modificarCliente(cliente);
+                } else {
+                    resultado = enviarCliente(cliente);
+                }
+
+                if (resultado != null) {
+                    loadClientes(); // Recargar la lista
+                    cleanForm(); // Limpiar el formulario
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle(isModifying ? "Modificar Cliente" : "Agregar Cliente");
+                    alert.setContentText(isModifying ? "Cliente modificado correctamente." : "Cliente agregado correctamente.");
+                    alert.showAndWait();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setContentText("Ocurrió un error al " + (isModifying ? "modificar" : "agregar") + " el cliente.");
+                    alert.showAndWait();
+                }
+
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error inesperado");
+                alert.setContentText("Ocurrió un error al procesar la operación. Por favor, verifica los datos.");
+                alert.showAndWait();
+                e.printStackTrace();
+            }
         });
+
 
         btnInicio.setOnMouseClicked(event -> {
             try {
@@ -206,7 +263,6 @@ public class ClienteController {
         new Thread(() -> {
             try {
                 HttpResponse<String> response = Unirest.get(globals.BASE_URL + "cliente/getAllClientes").asString();
-                System.out.println("Respuesta JSON: " + response.getBody()); // Verifica la respuesta
                 Platform.runLater(() -> {
                     try {
                         Gson gson = new Gson();
@@ -320,6 +376,7 @@ public class ClienteController {
         return null;
     }
 
+
     public String enviarCliente(Cliente cliente) {
         try {
             Gson gson = new Gson();
@@ -328,17 +385,42 @@ public class ClienteController {
 
             HttpResponse<String> response = Unirest.post(globals.BASE_URL + "cliente/insertarCliente")
                     .header("Content-Type", "application/x-www-form-urlencoded")
-                    .field("cliente", clienteJson) // Enviar el JSON por el body de la petición
-                    .asString();//
+                    .field("datosCliente",clienteJson)
+                    .asString();
 
+
+            if (response.getStatus() == 200 || response.getStatus() == 201){
+                System.out.println("Cliente enviado exitosamente.");
+                cleanForm();
+                return response.getBody();
+            } else {
+                System.err.println("Error al enviar cliente: " + response.getStatus() + " - " + response.getBody());
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String modificarCliente(Cliente cliente) {
+        try {
+            Gson gson = new Gson();
+            String clienteJson = gson.toJson(cliente);
+            System.out.println(clienteJson);
+
+            HttpResponse<String> response = Unirest.post(globals.BASE_URL + "cliente/actualizarCliente")
+                    .header("Content-Type", "application/x-www-form-urlencoded")
+                    .field("datosCliente",clienteJson) // Enviar el JSON por el body de la petición
+                    .asString();
 
             // Validar la respuesta
-            if (response.getStatus() == 201) {
-                System.out.println("Cliente enviado exitosamente.");
+            if (response.getStatus() == 200 || response.getStatus() == 201){
+                System.out.println("Cliente actualizado exitosamente.");
                 cleanForm();
                 return response.getBody(); // El servidor responde con algún cuerpo JSON vacío
             } else {
-                System.err.println("Error al enviar cliente: " + response.getStatus() + " - " + response.getBody());
+                System.err.println("Error al actualizar cliente: " + response.getStatus() + " - " + response.getBody());
                 return null;
             }
         } catch (Exception e) {

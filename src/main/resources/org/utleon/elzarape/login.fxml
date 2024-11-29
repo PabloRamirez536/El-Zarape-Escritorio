@@ -23,22 +23,22 @@
          </font></Label>
       <VBox layoutX="101.0" layoutY="315.0" prefHeight="150.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
          <children>
-            <Label text="Usuario:">
+            <Label alignment="CENTER" prefHeight="27.0" prefWidth="399.0" text="Usuario:">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Label>
-            <TextField fx:id="txtUsuario">
+            <TextField fx:id="txtUsuario" alignment="CENTER">
                <font>
                   <Font name="Arial" size="18.0" />
                </font></TextField>
-            <Label text="Constraseña:">
+            <Label alignment="CENTER" prefHeight="27.0" prefWidth="401.0" text="Constraseña:">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font></Label>
-            <PasswordField fx:id="txtContrsenia">
+            <PasswordField fx:id="txtContrsenia" alignment="CENTER">
                <font>
                   <Font name="Arial" size="18.0" />
                </font></PasswordField>
