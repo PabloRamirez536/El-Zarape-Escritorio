@@ -68,7 +68,7 @@
                         <Insets bottom="10.0" top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="txtNombre" alignment="CENTER" promptText="Ingresa el nombre..." GridPane.rowIndex="3">
+                  <TextField fx:id="txtNombre" alignment="CENTER" promptText="Ingresa el Nombre..." GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial" size="16.0" />
                      </font>
@@ -127,7 +127,7 @@
                         <Insets top="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Estatus" GridPane.rowIndex="16">
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Estatus:" GridPane.rowIndex="16">
                      <font>
                         <Font name="Arial Bold" size="24.0" />
                      </font>

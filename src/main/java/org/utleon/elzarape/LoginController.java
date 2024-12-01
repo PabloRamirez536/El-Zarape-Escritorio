@@ -12,8 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
-import kong.unirest.HttpResponse;
-import kong.unirest.Unirest;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
