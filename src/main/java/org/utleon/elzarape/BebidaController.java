@@ -235,7 +235,7 @@ public class BebidaController {
     }
     private void loadCategoria(String filtro) {
         new Thread(() ->{
-            HttpResponse<String> response = Unirest.get(globals.BASE_URL+"bebida/getAllCategoriaBebida?filtro="+filtro).asString();
+            HttpResponse<String> response = Unirest.get(globals.BASE_URL+"bebida/getAllCategoriaBebida").asString();
             Platform.runLater(() ->{
                 Gson gson = new Gson();
                 categoria = FXCollections.observableArrayList(List.of(gson.fromJson(response.getBody(), Categoria[].class)));

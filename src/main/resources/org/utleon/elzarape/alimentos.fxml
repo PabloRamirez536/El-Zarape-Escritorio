@@ -1,14 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
+            styleClass="bg-fondo-modulo" stylesheets="@style/styleInicio.css"
             fx:controller="org.utleon.elzarape.AlimentoController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="1000.0" prefWidth="1900.0">
+    <children>
+        <Label alignment="CENTER" layoutX="103.0" layoutY="47.0" styleClass="bg-titulo" text="Alimentos" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="930.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <font>
+                <Font name="Arial Bold" size="48.0" />
+            </font>
+        </Label>
+        <Pane layoutX="53.0" layoutY="85.0" prefHeight="930.0" prefWidth="674.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1300.0" AnchorPane.topAnchor="70.0">
+            <children>
+                <Label alignment="CENTER" layoutY="47.0" prefHeight="52.0" prefWidth="600.0" text="Registro de Alimentos">
+                    <font>
+                        <Font name="Arial Bold" size="36.0" />
+                    </font>
+                </Label>
+                <GridPane alignment="CENTER" layoutX="73.0" layoutY="156.0" prefHeight="671.0" prefWidth="461.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label alignment="CENTER" prefHeight="41.0" prefWidth="456.0" text="Nombre:" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" top="5.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="txtNombre" alignment="CENTER" promptText="Ingresa el Nombre..." GridPane.rowIndex="3">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </TextField>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Descripción:" GridPane.rowIndex="4">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="5.0" />
+                            </GridPane.margin>
+                            <padding>
+                                <Insets bottom="10.0" top="10.0" />
+                            </padding>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Foto:" GridPane.rowIndex="6">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="5.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Precio:" GridPane.rowIndex="8">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="5.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Categoría:" GridPane.rowIndex="10">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="5.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Estatus:" GridPane.rowIndex="12">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="5.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Acción" GridPane.rowIndex="14">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" top="5.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="txtDescripcion" alignment="CENTER" promptText="Ingresa la Descripción..." GridPane.rowIndex="5">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="txtFoto" alignment="CENTER" promptText="Ingresa la URL..." GridPane.rowIndex="7">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="txtPrecio" alignment="CENTER" promptText="Ingresa el Precio.." GridPane.rowIndex="9">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </TextField>
+                        <ComboBox fx:id="txtCategoria" prefHeight="25.0" prefWidth="534.0" GridPane.rowIndex="11">
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </ComboBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="13">
+                            <children>
+                                <CheckBox fx:id="txtEstatus" alignment="CENTER" mnemonicParsing="false">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </CheckBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="34.0" prefWidth="461.0" GridPane.rowIndex="15">
+                            <children>
+                                <Button fx:id="btnGuardar" mnemonicParsing="false" styleClass="btn-funciones" text="Guardar">
+                                    <HBox.margin>
+                                        <Insets right="15.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font name="Arial" size="20.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="btnCancelar" mnemonicParsing="false" styleClass="btn-funciones" text="Limpiar">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <HBox.margin>
+                                        <Insets left="15.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font name="Arial" size="20.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <Label alignment="CENTER" prefHeight="41.0" prefWidth="456.0" text="ID Alimento:">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtIdAlimento" alignment="CENTER" promptText="ID Alimento" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </GridPane>
+            </children></Pane>
+        <Pane layoutX="63.0" layoutY="95.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+            <children>
+                <TableView fx:id="tblAlimentos" layoutX="22.0" layoutY="159.0" prefHeight="751.0" prefWidth="1265.0">
+                    <columns>
+                        <TableColumn fx:id="colIdAlimento" prefWidth="66.0" text="ID Alimento" />
+                        <TableColumn fx:id="colNombre" prefWidth="229.0" text="Nombre" />
+                        <TableColumn fx:id="colDescripcion" prefWidth="308.0" text="Descripción" />
+                        <TableColumn fx:id="colFoto" prefWidth="189.0" text="Foto" />
+                        <TableColumn fx:id="colPrecio" prefWidth="125.0" text="Precio" />
+                        <TableColumn fx:id="colTipoCategoria" prefWidth="224.0" text="Categoria" />
+                        <TableColumn fx:id="colEstatus" prefWidth="123.0" text="Estatus" />
+                    </columns>
+                </TableView>
+                <Label alignment="CENTER" layoutX="-2.0" layoutY="40.0" prefHeight="52.0" prefWidth="1300.0" text="Tabla Alimentos">
+                    <font>
+                        <Font name="Arial Bold" size="36.0" />
+                    </font>
+                </Label>
+                <VBox fx:id="btnInicio" layoutX="1172.0" layoutY="14.0" prefHeight="134.0" prefWidth="105.0">
+                    <children>
+                        <ImageView fitHeight="118.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/hogar.png" />
+                            </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="161.0" text="Inicio" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin></Label>
+                    </children>
+                </VBox>
+            </children></Pane>
+    </children>
 
 </AnchorPane>

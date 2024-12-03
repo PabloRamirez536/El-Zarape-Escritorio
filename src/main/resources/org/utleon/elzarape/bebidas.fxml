@@ -99,7 +99,7 @@
                                 <Insets top="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Contraseña:" GridPane.rowIndex="10">
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="527.0" text="Categoría:" GridPane.rowIndex="10">
                             <font>
                                 <Font name="Arial Bold" size="24.0" />
                             </font>

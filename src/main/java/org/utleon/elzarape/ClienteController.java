@@ -100,6 +100,7 @@ public class ClienteController {
     public void initialize() {
         initColumns();
         txtIdCliente.setEditable(false);
+        txtEstatus.setSelected(true);
         txtEstado.setConverter(new StringConverter<>() {
             @Override
             public String toString(Estado estado) {
@@ -289,9 +290,9 @@ public class ClienteController {
         txtUsuario.setText("");
         txtContrasenia.setText("");
         txtIdCliente.setText("");
-        txtCiudad.getSelectionModel().clearSelection(); // Limpia la selección de ciudad
+        txtCiudad.getSelectionModel().clearSelection();
         txtEstado.getSelectionModel().clearSelection();
-        txtEstatus.setSelected(false);
+        txtEstatus.setSelected(true);
         btnGuardar.setText("Guardar");
         btnGuardar.setDisable(false);
     }
