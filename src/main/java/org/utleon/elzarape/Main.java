@@ -16,13 +16,4 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
-    //    public void start(Stage primaryStage) throws Exception {
-//        Parent parent = FXMLLoader.load(Main.class.getResource("inicio.fxml"));
-//        primaryStage.setTitle("El Zarape - Sistema de Gestión");
-//        primaryStage.setMaximized(true);
-//        primaryStage.setScene(new Scene(parent));
-//        primaryStage.show();
-//    }
-
 }

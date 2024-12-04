@@ -100,6 +100,7 @@ public class ClienteController {
     public void initialize() {
         initColumns();
         txtIdCliente.setEditable(false);
+        txtContrasenia.setEditable(false);
         txtEstatus.setSelected(true);
         txtEstado.setConverter(new StringConverter<>() {
             @Override
@@ -135,6 +136,7 @@ public class ClienteController {
         tblClientes.setItems(clientes);
         txtEstado.setItems(estados);
         txtCiudad.setItems(ciudades);
+        txtContrasenia.setText(generarContrasena());
 
         tblClientes.setOnMouseClicked(event -> {
             showClienteSelected();
@@ -230,6 +232,19 @@ public class ClienteController {
         });
     }
 
+    private String generarContrasena() {
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        int longitud = 12;
+        StringBuilder contrasena = new StringBuilder();
+
+        for (int i = 0; i < longitud; i++) {
+            int posicion = (int) (Math.random() * caracteres.length());
+            contrasena.append(caracteres.charAt(posicion));
+        }
+
+        return contrasena.toString();
+    }
+
 
     public void cargarModuloPrincipal() throws IOException {
         Stage stage = new Stage();
@@ -288,7 +303,7 @@ public class ClienteController {
         txtApellidos.setText("");
         txtTelefono.setText("");
         txtUsuario.setText("");
-        txtContrasenia.setText("");
+        txtContrasenia.setText(generarContrasena());
         txtIdCliente.setText("");
         txtCiudad.getSelectionModel().clearSelection();
         txtEstado.getSelectionModel().clearSelection();

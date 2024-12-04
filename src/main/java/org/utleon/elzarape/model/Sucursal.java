@@ -2,7 +2,7 @@ package org.utleon.elzarape.model;
 
 public class Sucursal {
     private int idSucursal;
-    private String SucursalNombre;
+    private String nombre;
     private String latitud;
     private String longitud;
     private String foto;
@@ -11,16 +11,17 @@ public class Sucursal {
     private String calle;
     private String numCalle;
     private String colonia;
+    private String direccion;
+    private Ciudad ciudadNombre;
+    private Estado estadoNombre;
     private boolean activo;
-    private Ciudad ciudad;
-    private Estado estado;
 
     public Sucursal() {
     }
 
-    public Sucursal(int idSucursal, String sucursalNombre, String latitud, String longitud, String foto, String urlWeb, String horarios, String calle, String numCalle, String colonia, boolean activo, Ciudad ciudad, Estado estado) {
+    public Sucursal(int idSucursal, String nombre, String latitud, String longitud, String foto, String urlWeb, String horarios, String calle, String numCalle, String colonia, String direccion, Ciudad ciudadNombre, Estado estadoNombre, boolean activo) {
         this.idSucursal = idSucursal;
-        SucursalNombre = sucursalNombre;
+        this.nombre = nombre;
         this.latitud = latitud;
         this.longitud = longitud;
         this.foto = foto;
@@ -29,9 +30,10 @@ public class Sucursal {
         this.calle = calle;
         this.numCalle = numCalle;
         this.colonia = colonia;
+        this.direccion = direccion;
+        this.ciudadNombre = ciudadNombre;
+        this.estadoNombre = estadoNombre;
         this.activo = activo;
-        this.ciudad = ciudad;
-        this.estado = estado;
     }
 
     public int getIdSucursal() {
@@ -42,12 +44,12 @@ public class Sucursal {
         this.idSucursal = idSucursal;
     }
 
-    public String getSucursalNombre() {
-        return SucursalNombre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setSucursalNombre(String sucursalNombre) {
-        SucursalNombre = sucursalNombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getLatitud() {
@@ -114,27 +116,35 @@ public class Sucursal {
         this.colonia = colonia;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public Ciudad getCiudadNombre() {
+        return ciudadNombre;
+    }
+
+    public void setCiudadNombre(Ciudad ciudadNombre) {
+        this.ciudadNombre = ciudadNombre;
+    }
+
+    public Estado getEstadoNombre() {
+        return estadoNombre;
+    }
+
+    public void setEstadoNombre(Estado estadoNombre) {
+        this.estadoNombre = estadoNombre;
+    }
+
     public boolean isActivo() {
         return activo;
     }
 
     public void setActivo(boolean activo) {
         this.activo = activo;
-    }
-
-    public Ciudad getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(Ciudad ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
     }
 }

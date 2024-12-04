@@ -4,6 +4,7 @@ module org.utleon.elzarape {
     requires unirest.java;
     requires com.google.gson;
     requires org.apache.httpcomponents.httpclient;
+    requires java.sql;
 
 
     opens org.utleon.elzarape to javafx.fxml;
